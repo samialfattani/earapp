@@ -1,0 +1,21 @@
+desktop.ini
+*.lnk
+.settings
+.vscode
+.idea
+__pycache__
+bin
+
+
+GIT modifications.txt
+
+migrations
+
+passenger_wsgi.pyc
+passenger_redirect.pyc
+stdout.txt
+stderr.txt
+out.log
+
+# DON'T include this file in git for security reasons
+.env

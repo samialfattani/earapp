@@ -1,0 +1,27 @@
+{% extends 'admin/my_master.html' %}
+
+
+{% block body %}
+
+  <form action="/admin/backup-static" method="GET">
+    <button id="backup_static_btn" class="btn btn-primary"   
+            onclick="document.getElementById('backup_static_btn').submit();">
+
+      Take Backup of Images
+      <i id="loader" class="fas fa-spinner" style="display: none;"></i>
+    </button> 
+  </form>
+
+  <div id="feedback" >
+      -----
+  </div>
+
+  <br><br>
+
+  <h2>Drop Zone</h2>
+  {{ dropzone.load_js() }}
+
+  {{ dropzone.create(action='upload') }}
+  {{ dropzone.config() }}
+
+{% endblock %}

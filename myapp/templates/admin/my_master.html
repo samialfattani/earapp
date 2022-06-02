@@ -1,0 +1,37 @@
+{% extends 'admin/base.html' %}
+
+
+<!-- ----------- FIND HOW TO CUSTOMIZE TEMPLATE ---------- -->
+<!-- https://flask-admin.readthedocs.io/en/latest/introduction/#working-with-the-built-in-templates -->
+
+{% block head_meta %}
+  <link rel="icon" href="/static/img/icon.png" type="image/x-icon"/>
+  <link href="https://kit-pro.fontawesome.com/releases/v5.15.1/css/pro.min.css" rel="stylesheet">
+  {{ dropzone.load_css() }}
+{% endblock %}
+
+{#
+{% block head_css %}
+<style></style>
+  
+
+{% endblock %}
+#}
+
+
+{% block head %}
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
+  <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+ 
+{% endblock %}
+
+{# Logo in the menu bar
+{% block brand %}
+{% endblock %}
+#}
+
+{% block title %}
+Admin
+{% endblock %}
+

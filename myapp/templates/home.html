@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block extra_css %}
+  <link rel="stylesheet" type="text/css" href="/static/css/home.css">
+{% endblock %}
+
+{% block main %}
+{% block myContent %}
+
+
+<h1>hello home</h1>
+
+{{ dropzone.config(custom_options="success: function(file, response){console.log(response);}") }}
+
+{% endblock myContent %}
+{% endblock main %}

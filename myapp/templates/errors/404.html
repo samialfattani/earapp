@@ -1,0 +1,19 @@
+{%extends "layout.html"%}
+
+{% block main %}
+{% block myContent %}
+
+    <h1 class="error-title">404 - Not Found</h1>
+
+    <h4>
+    <div class="content-section">
+      <samp>
+        <p>Oops. This Page is not available(404)</p>
+        <p>Server Msg: {{ error.description }}</p>
+      </samp>
+    </div>
+    </h4>
+
+
+{% endblock myContent %}
+{% endblock %}

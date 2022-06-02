@@ -1,0 +1,67 @@
+
+{% macro render_field( my_field ) %}
+
+    <!--  -->
+    {% if my_field.__class__.__name__  == 'BooleanField' %}
+        <div class="form-check">
+            {{ add_checkbox_with_err_block( my_field ) }}    
+            {{ my_field.label(class="form-check-label") }}
+        </div>
+    {% elif my_field.__class__.__name__  == 'RadioField' %}
+        <div class="form-group">
+            {{ my_field.label(class="form-check-label") }}
+            {{ add_radiobox_with_err_block( my_field ) }}    
+        </div>
+    {% else %}
+        <div class="form-group">
+            {{ my_field.label(class="form-control-label") }}
+            {{ add_field_with_err_block( my_field ) }}
+        </div>
+    {% endif %}        
+
+{% endmacro %}
+
+
+
+{% macro add_field_with_err_block( my_field ) %}
+
+    {% if my_field.errors %}
+        {{ my_field (class="form-control form-control-md is-invalid") }}
+        <div class="invalid-feedback">
+            {% for err in my_field.errors %}
+                <span>{{ err }}</span>
+            {% endfor %}
+        </div>
+    {% else %}
+        {{ my_field (class="form-control form-control-md") }}
+    {% endif %}
+
+{% endmacro %}
+
+
+{% macro add_checkbox_with_err_block( my_field ) %}
+
+    {% if my_field.errors %}
+        {{ my_field (class="form-check-input is-invalid") }}
+        <div class="invalid-feedback">
+            {% for err in my_field .errors %}
+                <span>{{ err }}</span>
+            {% endfor %}
+        </div>
+    {% else %}
+        {{ my_field (class="form-check-input") }}
+    {% endif %}
+
+{% endmacro %}
+
+{% macro add_radiobox_with_err_block( my_field ) %}
+
+    {% for subfield in my_field %}
+        <tr>
+            <td>{{ subfield }}</td>
+            <td>{{ subfield.label() }}</td>
+        </tr>
+    {% endfor %}                
+
+
+{% endmacro %}

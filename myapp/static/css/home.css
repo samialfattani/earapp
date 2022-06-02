@@ -1,0 +1,50 @@
+.card{
+  align-items: center;  
+  margin-top: 10px;
+  padding: 0px;
+  border: 0px;
+  box-shadow: 1px 1px 5px gray;
+}
+
+.card:hover{
+  /*border-color: #428bca;*/
+  background-color: #DDECF5;
+}
+
+.bid:hover{
+  color: red;
+  text-decoration: none;
+}
+
+a.brand:hover, a.brand:visited, a.brand:active, a.brand:link {
+  text-decoration: none;
+}
+
+.brand_img {
+  transition: .25s ease; 
+  width:100%; 
+  max-height:100%;      
+}    
+
+.brand_img:hover {
+  opacity: 0.7;
+}
+
+.sold-out{
+  background-image: url('/static/soldout.png');      
+  background-size: 100% 40%;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  position: absolute;      
+  width: 100%;
+  height: 100%;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

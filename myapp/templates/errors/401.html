@@ -1,0 +1,16 @@
+{%extends "layout.html"%}
+
+{% block main %}
+{% block myContent %}
+
+    <h1 class="error-title">401 - This request has Authorization Problem</h1>
+    <h4>
+    <div class="content-section">
+    <samp >
+      <p>Server Msg: {{ error.description }}</p>
+    </samp>
+    </div>
+    </h4>
+
+{% endblock myContent %}
+{% endblock %}

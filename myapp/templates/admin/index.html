@@ -1,0 +1,58 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+  <h2>Hello in Administeration Page</h2>
+  <h5>
+    <a class="btn btn-primary btn-lg" href="/">
+      <i class="fas fa-home"></i> Go back to applicaion
+    </a>
+  </h5>
+  <h4>
+    <code>
+      git_hash: {{ 'x' }} <br>
+      git_tag: {{ 'x' }} <br>
+      
+      APP_NAME: {{ server_info['app_name'] }} <br>
+      Server: {{ server_info['domain'] }}  <br>
+      <br>
+    </code>
+  </h4>
+
+  <form action="/admin" method="GET">
+    <select name="theme" id="theme" onchange="submit()">
+      {% set themes = ['cerulean', 'cosmo','cyborg','darkly','default','flatly','fonts', 'journal','lumen','paper','readable','sandstone','simplex','slate','spacelab','superhero','united','yeti'] %}
+      
+      {% for t in themes %}
+        {% if theme == t %}
+          <option value="{{ t }}" selected>{{ t }}</option>
+        {% else %}    
+          <option value="{{ t }}">{{ t }}</option>
+        {% endif %}    
+      {% endfor %}
+    </select>
+    {{ theme }}
+  </form> 
+  
+
+
+
+  <!-- ======= ENV VARIABLES =============================== -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+  
+    <br><br>
+    <table id="myTable" class="table thead-light" style="font-family: consolas; font-size: 14pt;" >
+      <thead>
+        <th>Key</th> <th>Value</th>
+      </thead>
+      <tbody>
+        {% for k,v in environs.items() %} 
+        <tr>
+          <td>{{ k  }}</td> <td>{{ v }}</td>
+        </tr>
+        {% endfor  %} 
+      </tbody>
+    </table>
+  
+{% endblock %}

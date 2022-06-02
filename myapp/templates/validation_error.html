@@ -1,0 +1,12 @@
+
+{% if myControl.errors %}
+    {{ myControl(class="form-control form-control-md is-invalid") }}
+    <div class="invalid-feedback">
+        {% for err in myControl.errors %}
+            <span>{{ err }}</span>
+        {% endfor %}
+    </div>
+{% else %}
+    {{ myControl(class="form-control form-control-md") }}
+{% endif %}
+
